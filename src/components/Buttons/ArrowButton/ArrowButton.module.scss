@@ -1,0 +1,83 @@
+@use "../../../assets/sass/functions" as *;
+
+.button {
+  width: vw-1600(52);
+  height: vw-1600(52);
+  border-radius: 50%;
+  border: 1px solid var(--white-text);
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  outline: none;
+  text-decoration: none;
+
+  &.secondary {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--green-1);
+  }
+
+  svg {
+    width: vw-1600(22);
+    height: vw-1600(22);
+  }
+
+  @media (max-width: 768px) {
+    width: 52px;
+    height: 52px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &:hover {
+    background: var(--white-text);
+    color: var(--green-1);
+
+    &.secondary {
+      background-color: var(--grey-2);
+      color: var(--green-1);
+      border-color: var(--grey-1);
+    }
+  }
+
+  &:active {
+    background: var(--green-1);
+    color: var(--white-text);
+    border-color: var(--green-1);
+
+    &.secondary {
+      background-color: var(--green-1);
+      color: var(--white-text);
+      border-color: var(--green-1);
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white-text);
+    cursor: default;
+    border-color: rgba(198, 198, 198, 0.1);
+
+    svg {
+      opacity: 0.5;
+    }
+
+    &.secondary {
+      background-color: transparent;
+      color: var(--dark-text);
+      border-color: transparent;
+
+      svg {
+        opacity: 0.3;
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@use "../../../assets/sass/functions" as *;
+
+.button {
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: vw-1600(8);
+  transition: all 0.3s ease;
+  color: var(--green-1);
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background: transparent;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  font-weight: 500;
+  position: relative;
+
+  &.backIcon {
+    &:hover {
+      color: var(--green-1);
+
+      svg {
+        color: var(--dark-text);
+      }
+    }
+
+    &:active {
+      color: var(--dark-text);
+
+      svg {
+        color: var(--dark-text);
+      }
+    }
+
+    &:disabled,
+    &.disabled {
+      color: var(--grey-1);
+
+      svg {
+        color: var(--grey-1);
+      }
+    }
+  }
+
+  svg {
+    width: vw-1600(10);
+    height: vw-1600(10);
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--green-2);
+  }
+
+  &:active {
+    color: var(--dark-text);
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    color: var(--grey-1);
+  }
+}

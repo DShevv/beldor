@@ -1,0 +1,60 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  display: flex;
+  gap: vw-1600(8);
+  align-items: center;
+  justify-content: center;
+
+  .next {
+    transform: rotate(180deg);
+  }
+
+  .next,
+  .prev {
+    background-color: transparent;
+    border: none;
+
+    svg {
+      width: vw-1600(15);
+      height: vw-1600(15);
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: var(--green-1);
+    }
+  }
+
+  .list {
+    display: flex;
+    gap: vw-1600(12);
+    align-items: center;
+
+    .page {
+      color: var(--accent-1);
+      text-decoration: none;
+      width: vw-1600(37);
+      height: vw-1600(37);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: vw-1600(6);
+      border: 1px solid rgba(198, 198, 198, 0.3);
+
+      &.active {
+        background-color: var(--green-1);
+        color: var(--white-text);
+        border-color: var(--green-1);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: 24px;
+
+    .list {
+      gap: 16px;
+    }
+  }
+}

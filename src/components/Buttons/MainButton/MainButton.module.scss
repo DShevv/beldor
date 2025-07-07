@@ -1,0 +1,106 @@
+@use "../../../assets/sass/functions" as *;
+
+.button {
+  padding: vw-1600(12) vw-1600(8);
+  border-radius: vw-1600(6);
+  background: var(--green-1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: var(--white-text);
+  border: none;
+  outline: none;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--green-2);
+  }
+
+  &:active {
+    background: var(--green-2);
+    box-shadow: 0 0 4px 0 rgba(112, 167, 70, 0.4);
+    background: var(--green-2);
+  }
+
+  &:disabled,
+  &.disabled {
+    background: var(--gray);
+    color: var(--text);
+    cursor: default;
+
+    span {
+      opacity: 0.5;
+    }
+  }
+
+  &.secondary {
+    padding: vw-1600(8) vw-1600(16);
+    background: transparent;
+    color: var(--green-1);
+
+    &:hover {
+      background: var(--green-1);
+      color: var(--white-text);
+    }
+
+    &:active {
+      background: var(--accent-1);
+      box-shadow: none;
+      color: var(--white);
+    }
+
+    &:disabled,
+    &.disabled {
+      background: transparent;
+      color: var(--grey-1);
+    }
+  }
+
+  &.dark {
+    padding: vw-1600(8) vw-1600(16);
+    background: transparent;
+    color: var(--dark-text);
+
+    &:hover {
+      background: var(--dark-text);
+      color: var(--white-text);
+    }
+
+    &:active {
+      background: var(--accent-1);
+      color: var(--white);
+    }
+
+    &:disabled,
+    &.disabled {
+      background: transparent;
+      color: var(--grey-1);
+    }
+  }
+
+  &.transparent {
+    padding: vw-1600(12) vw-1600(8);
+    background: transparent;
+    color: var(--dark-text);
+    border: 1px solid rgba(198, 198, 198, 0.3);
+
+    &:hover {
+      background: var(--grey-2);
+      border: 1px solid rgba(198, 198, 198, 0.3);
+    }
+
+    &:active {
+      background: rgba(198, 198, 198, 0.1);
+      border-color: transparent;
+    }
+
+    &:disabled,
+    &.disabled {
+      background: transparent;
+      border: 1px solid rgba(198, 198, 198, 0.3);
+      color: var(--grey-1);
+    }
+  }
+}

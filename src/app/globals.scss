@@ -1,0 +1,230 @@
+@use "../assets/sass/functions" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --white-text: #fff;
+  --white-bg: #fff;
+  --grey-1: #7c7d7b;
+  --grey-2: #c6c6c6;
+  --dark-text: #191e1e;
+  --green-1: #4d8423;
+  --green-2: #70a746;
+  --red: #cd1818;
+}
+
+html,
+body {
+  max-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  color: var(--dark-text);
+  background-color: royalblue;
+  position: relative;
+}
+
+body {
+  display: flex;
+  min-height: 100dvh;
+}
+
+main {
+  width: 100%;
+}
+
+.h1 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(64);
+  line-height: 110%;
+}
+
+.h2 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(52);
+  line-height: 110%;
+}
+
+.h3 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(32);
+  line-height: 110%;
+}
+
+.h4 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(24);
+  line-height: 120%;
+}
+
+.h5 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(18);
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.h6 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(15);
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.body-1 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(32);
+  line-height: 140%;
+}
+
+.body-2 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(20);
+  line-height: 130%;
+}
+
+.body-3 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(20);
+  line-height: 140%;
+}
+
+.body-4 {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(16);
+  line-height: 130%;
+}
+
+.body-5 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(16);
+  line-height: 130%;
+}
+
+.body-6 {
+  font-family: var(--font-family);
+  font-weight: 300;
+  font-size: vw-1600(16);
+  line-height: 130%;
+}
+
+.body-7 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(15);
+  line-height: 130%;
+}
+
+.t-button {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: vw-1600(16);
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.t-placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: vw-1600(16);
+  line-height: 130%;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    height: fit-content;
+  }
+
+  .h1 {
+    font-size: 30px;
+  }
+
+  .h2 {
+    font-size: 26px;
+  }
+
+  .h3 {
+    font-size: 22px;
+  }
+
+  .h4 {
+    font-size: 19px;
+  }
+
+  .h5 {
+    font-size: 16px;
+    line-height: 120%;
+  }
+
+  .h6 {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .body-1 {
+    font-size: 22px;
+    line-height: 120%;
+  }
+
+  .body-2 {
+    font-size: 17px;
+    line-height: 120%;
+  }
+
+  .body-3 {
+    font-size: 17px;
+    line-height: 120%;
+  }
+
+  .body-4 {
+    font-size: 15px;
+    line-height: 120%;
+  }
+
+  .body-5 {
+    font-size: 15px;
+    line-height: 120%;
+  }
+
+  .body-6 {
+    font-size: 15px;
+    line-height: 120%;
+  }
+
+  .body-7 {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+  }
+
+  .t-button {
+    font-size: 15px;
+    line-height: 120%;
+  }
+
+  .t-placeholder {
+    font-size: 15px;
+    line-height: 120%;
+  }
+}
