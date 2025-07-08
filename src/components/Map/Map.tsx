@@ -3,8 +3,6 @@ import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
 import styles from "./Map.module.scss";
 import Marker from "@/components/Marker/Marker";
-import mapStyles from "@/assets/maps.json";
-import { VectorCustomizationItem } from "@yandex/ymaps3-types";
 
 declare global {
   interface Window {
@@ -47,7 +45,7 @@ function Map({
           },
           [
             new YMapDefaultSchemeLayer({
-              customization: mapStyles as VectorCustomizationItem[],
+              /* customization: mapStyles as VectorCustomizationItem[], */
             }),
             new YMapDefaultFeaturesLayer({}),
           ]

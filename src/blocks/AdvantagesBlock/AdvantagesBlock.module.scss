@@ -1,0 +1,91 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(140);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: vw-1600(22);
+
+  @media (max-width: 768px) {
+    margin-top: 72px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .caption {
+    display: flex;
+    flex-direction: column;
+    gap: vw-1600(20);
+
+    @media (max-width: 768px) {
+      gap: 16px;
+    }
+
+    .description {
+      max-width: vw-1600(612);
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: vw-1600(22);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .advantage {
+      display: flex;
+      gap: vw-1600(12);
+      border: 1px solid rgba(198, 198, 198, 0.3);
+      border-radius: vw-1600(6);
+      padding: vw-1600(21) vw-1600(24);
+      transition: all 0.3s ease;
+
+      @media (max-width: 768px) {
+        border-radius: 6px;
+        padding: 16px 21px;
+        gap: 12px;
+      }
+
+      &:hover {
+        box-shadow:
+          0 9px 19px 0 rgba(32, 33, 32, 0.05),
+          0 34px 34px 0 rgba(32, 33, 32, 0.02),
+          0 77px 46px 0 rgba(32, 33, 32, 0.01),
+          0 137px 55px 0 rgba(32, 33, 32, 0),
+          0 214px 60px 0 rgba(32, 33, 32, 0);
+        border: 1px solid var(--green-1);
+      }
+
+      svg {
+        width: vw-1600(36);
+        height: vw-1600(36);
+        color: var(--green-1);
+        flex-shrink: 0;
+
+        @media (max-width: 768px) {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: vw-1600(6);
+
+        @media (max-width: 768px) {
+          gap: 6px;
+        }
+      }
+    }
+  }
+}

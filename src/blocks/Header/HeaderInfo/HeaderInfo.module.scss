@@ -1,18 +1,21 @@
 @use "../../../assets/sass/functions" as *;
 
 .container {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
+  padding: vw-1600(24) 0;
+
+  @media (max-width: 768px) {
+    padding: 12px 0;
+  }
 
   .wrapper {
-    padding: vw-1600(24) 0;
     max-width: vw-1600(1298);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     @media (max-width: 768px) {
-      padding: 12px 0;
       max-width: 100%;
       margin: 0 20px;
       border-bottom: none;

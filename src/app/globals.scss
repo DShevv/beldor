@@ -36,6 +36,11 @@ main {
   width: 100%;
 }
 
+.wrapper {
+  max-width: vw-1600(1298);
+  margin: 0 auto;
+}
+
 .h1 {
   font-family: var(--font-family);
   font-weight: 500;
