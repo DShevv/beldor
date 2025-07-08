@@ -1,0 +1,125 @@
+@use "../../assets/sass/functions" as *;
+
+.header {
+  width: 100%;
+
+  .top {
+    width: 100%;
+    background-color: var(--grey-1);
+
+    .wrapper {
+      padding: vw-1600(8) 0;
+      max-width: vw-1600(1298);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 768px) {
+        padding: 6px 0;
+        max-width: 100%;
+        margin: 0 20px;
+      }
+    }
+
+    .country {
+      display: flex;
+      align-items: center;
+      gap: vw-1600(8);
+      color: var(--white-text);
+
+      svg {
+        width: vw-1600(26);
+        height: vw-1600(26);
+      }
+
+      @media (max-width: 768px) {
+        gap: 6px;
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: vw-1600(34);
+
+      @media (max-width: 768px) {
+        gap: 14px;
+      }
+
+      .language {
+        display: flex;
+        align-items: center;
+        gap: vw-1600(14);
+
+        @media (max-width: 768px) {
+          gap: 14px;
+        }
+
+        .languageLink {
+          color: var(--white-text);
+          text-decoration: none;
+
+          &.active {
+            font-weight: 500;
+          }
+
+          &:last-child {
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: vw-1600(-7);
+              width: vw-1600(1);
+              height: vw-1600(10);
+              background-color: var(--white-text);
+              transform: translateY(-50%);
+
+              @media (max-width: 768px) {
+                left: -7px;
+                width: 1px;
+                height: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      .version {
+        display: flex;
+        align-items: center;
+        gap: vw-1600(6);
+        text-decoration: none;
+        color: var(--white-text);
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        svg {
+          width: vw-1600(20);
+          height: vw-1600(20);
+        }
+
+        @media (max-width: 768px) {
+          gap: 6px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

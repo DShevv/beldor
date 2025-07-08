@@ -24,12 +24,11 @@ body {
   min-height: 100vh;
   font-family: var(--font-family);
   color: var(--dark-text);
-  background-color: royalblue;
+  background-color: var(--white-bg);
   position: relative;
 }
 
 body {
-  display: flex;
   min-height: 100dvh;
 }
 
