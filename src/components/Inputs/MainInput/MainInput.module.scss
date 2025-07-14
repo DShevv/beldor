@@ -7,6 +7,11 @@
   max-width: vw-1600(602);
   position: relative;
 
+  @media (max-width: 768px) {
+    max-width: 100%;
+    gap: 8px;
+  }
+
   .title {
     text-transform: uppercase;
     color: var(--dark-text);
@@ -25,7 +30,8 @@
     outline: none;
 
     @media (max-width: 768px) {
-      padding: 14px 16px;
+      padding: 16px;
+      border-radius: 6px;
     }
 
     &::placeholder {

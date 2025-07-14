@@ -3,8 +3,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: vw-1920(8);
-  max-width: vw-1920(632);
+  gap: vw-1600(10);
+  max-width: vw-1600(602);
   position: relative;
 
   @media (max-width: 768px) {
@@ -13,7 +13,7 @@
   }
 
   .title {
-    color: var(--text);
+    color: var(--dark-text);
 
     span {
       color: var(--red);
@@ -22,29 +22,30 @@
 
   .field {
     width: 100%;
-    min-height: vw-1920(120);
-    padding: vw-1920(14) vw-1920(16);
+    min-height: vw-1600(133);
+    padding: vw-1600(12) vw-1600(16);
     border: 1px solid transparent;
-    color: var(--text);
-    background: var(--white);
-    border: 1px solid rgba(37, 51, 140, 0.2);
-    border-radius: 0;
+    color: var(--dark-text);
+    background: var(--white-bg);
+    border: 1px solid rgba(198, 198, 198, 0.3);
+    border-radius: vw-1600(6);
     transition: all 0.2s ease;
     resize: none;
     outline: none;
 
     @media (max-width: 768px) {
-      padding: 14px 16px;
-      min-height: 120px;
+      padding: 12px 16px;
+      min-height: 110px;
+      border-radius: 6px;
     }
 
     &::placeholder {
-      opacity: 0.4;
-      color: var(--text);
+      opacity: 0.5;
+      color: var(--dark-text);
     }
 
     &.error {
-      border-color: var(--error);
+      border-color: var(--red);
     }
   }
 
@@ -52,7 +53,7 @@
     color: var(--red);
     position: absolute;
     left: 0;
-    bottom: vw-1920(-8);
+    bottom: vw-1600(-8);
     transform: translateY(100%);
 
     @media (max-width: 768px) {

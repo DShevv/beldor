@@ -1,0 +1,70 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(140);
+
+  @media (max-width: 768px) {
+    margin-top: 72px;
+  }
+
+  .title {
+    margin-bottom: vw-1600(36);
+
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .content {
+    display: flex;
+    gap: vw-1600(22);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .info {
+      flex: 1 1 vw-1600(418);
+      border: 1px solid rgba(198, 198, 198, 0.3);
+      border-radius: vw-1600(8);
+      padding: vw-1600(31) vw-1600(23);
+      background: rgba(198, 198, 198, 0.05);
+
+      @media (max-width: 768px) {
+        border-radius: 6px;
+        padding: 20px;
+        flex: initial;
+      }
+
+      .infoItem {
+        margin-bottom: vw-1600(20);
+
+        @media (max-width: 768px) {
+          margin-bottom: 18px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .infoTitle {
+          margin-bottom: vw-1600(8);
+          color: var(--grey-1);
+
+          @media (max-width: 768px) {
+            margin-bottom: 8px;
+          }
+        }
+
+        .infoText {
+          display: flex;
+          flex-direction: column;
+          text-decoration: none;
+          color: var(--dark-text);
+        }
+      }
+    }
+  }
+}

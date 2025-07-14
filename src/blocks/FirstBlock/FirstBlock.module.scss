@@ -1,0 +1,76 @@
+@use "../../assets/sass/functions" as *;
+
+.hero {
+  width: 100%;
+  background-color: var(--green-1);
+  position: relative;
+  padding-top: vw-1600(269);
+  padding-bottom: vw-1600(42);
+
+  @media (max-width: 768px) {
+    padding-top: 108px;
+    min-height: 230px;
+    padding-bottom: 32px;
+  }
+
+  .gradient {
+    position: absolute;
+    top: vw-1600(40);
+    left: 0;
+    width: 100%;
+    height: vw-1600(170);
+    background: linear-gradient(180deg, #262725 0%, rgba(38, 39, 37, 0) 100%);
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      height: 200px;
+      top: 32px;
+    }
+  }
+
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(28, 27, 27, 0.7);
+      z-index: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @media (max-width: 768px) {
+        object-position: 30% 50%;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    margin-bottom: vw-1600(16);
+    position: relative;
+    z-index: 3;
+
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .title {
+    color: var(--white-text);
+    position: relative;
+    z-index: 3;
+  }
+}

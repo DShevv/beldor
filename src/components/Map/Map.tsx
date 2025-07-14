@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
 import styles from "./Map.module.scss";
 import Marker from "@/components/Marker/Marker";
+import { StaticImageData } from "next/image";
 
 declare global {
   interface Window {
@@ -17,7 +18,7 @@ function Map({
 }: {
   className?: string;
   address?: string;
-  logo: string;
+  logo: string | StaticImageData;
 }) {
   const mapRef = useRef(null);
 
@@ -58,7 +59,7 @@ function Map({
               draggable: false,
               mapFollowsOnDrag: true,
             },
-            Marker(logo)
+            Marker(typeof logo === "string" ? logo : logo.src)
           )
         );
       }
@@ -69,7 +70,7 @@ function Map({
 
   return (
     <>
-      <section ref={mapRef} className={clsx(styles.container, className)} />
+      <div ref={mapRef} className={clsx(styles.container, className)} />
     </>
   );
 }

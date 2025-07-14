@@ -3,6 +3,7 @@ import "./globals.scss";
 import Script from "next/script";
 import Header from "@/blocks/Header/Header";
 import MobileMenu from "@/blocks/MobileMenu/MobileMenu";
+import Footer from "@/blocks/Footer/Footer";
 
 const jost = Jost({
   variable: "--font-family",
@@ -23,6 +24,7 @@ export default async function RootLayout({
         />
         <Header />
         {children}
+        <Footer />
 
         <MobileMenu />
       </body>

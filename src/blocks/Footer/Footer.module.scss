@@ -1,0 +1,230 @@
+@use "../../assets/sass/functions" as *;
+
+.footer {
+  width: 100%;
+  margin-top: vw-1600(140);
+  background: var(--dark-text);
+
+  @media (max-width: 768px) {
+    margin-top: 72px;
+  }
+
+  .top {
+    border-bottom: 1px solid var(--grey-1);
+    padding: vw-1600(28) 0;
+
+    @media (max-width: 768px) {
+      padding: 36px 0 32px;
+    }
+
+    :global(.wrapper) {
+      display: flex;
+      align-items: center;
+      gap: vw-1600(38);
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    .logo {
+      width: vw-1600(291);
+      height: vw-1600(59);
+      flex-shrink: 0;
+
+      @media (max-width: 768px) {
+        width: 214px;
+        height: 43px;
+      }
+    }
+
+    .text {
+      color: var(--white-text);
+      opacity: 0.7;
+    }
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: vw-1600(22);
+    margin-top: vw-1600(32);
+
+    @media (max-width: 768px) {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px 16px;
+      justify-content: center;
+    }
+
+    .col {
+      grid-column: span 3 / span 3;
+
+      @media (max-width: 768px) {
+        max-width: 159px;
+
+        &:has(.contacts) {
+          max-width: 100%;
+        }
+      }
+
+      .title {
+        color: var(--white-text);
+        margin-bottom: vw-1600(16);
+
+        @media (max-width: 768px) {
+          margin-bottom: 12px;
+        }
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: vw-1600(12);
+
+        @media (max-width: 768px) {
+          gap: 12px;
+        }
+
+        .link {
+          color: var(--white-text);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: vw-1600(16);
+
+        @media (max-width: 768px) {
+          gap: 14px;
+        }
+
+        .contactItem {
+          display: flex;
+          gap: vw-1600(10);
+          align-items: center;
+
+          @media (max-width: 768px) {
+            gap: 10px;
+          }
+
+          .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: vw-1600(42);
+            height: vw-1600(42);
+            flex-shrink: 0;
+            color: var(--green-1);
+            background: rgba(255, 255, 255, 0.1);
+
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+
+            @media (max-width: 768px) {
+              width: 42px;
+              height: 42px;
+
+              svg {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+
+          .contactInfo {
+            color: var(--white-text);
+            display: flex;
+            flex-direction: column;
+            gap: vw-1600(6);
+            text-decoration: none;
+
+            @media (max-width: 768px) {
+              gap: 6px;
+            }
+
+            .link {
+              color: var(--white-text);
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          a.contactInfo {
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: vw-1600(16);
+    margin-top: vw-1600(52);
+    padding-bottom: vw-1600(42);
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 42px;
+      padding-bottom: 36px;
+    }
+
+    .text {
+      color: var(--white-text);
+      opacity: 0.5;
+    }
+
+    .link {
+      color: var(--white-text);
+      opacity: 0.5;
+    }
+
+    .dev {
+      display: flex;
+      align-items: center;
+      gap: vw-1600(6);
+      color: var(--white-text);
+
+      @media (max-width: 768px) {
+        gap: 5px;
+      }
+
+      span {
+        opacity: 0.5;
+      }
+
+      .link {
+        text-decoration: none;
+        opacity: 1;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

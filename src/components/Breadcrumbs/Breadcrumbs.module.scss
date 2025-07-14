@@ -13,14 +13,15 @@
     width: vw-1600(10);
     height: vw-1600(10);
     transform: rotate(180deg);
+    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {
-    gap: 5px;
+    gap: 8px;
 
     svg {
-      width: 20px;
-      height: 20px;
+      width: 10px;
+      height: 10px;
     }
   }
 }
@@ -32,7 +33,7 @@
   width: fit-content;
 
   @media (max-width: 768px) {
-    gap: 5px;
+    gap: 8px;
   }
 }
 

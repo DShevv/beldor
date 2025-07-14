@@ -1,0 +1,68 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(140);
+
+  @media (max-width: 768px) {
+    margin-top: 72px;
+  }
+
+  h2 {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: vw-1600(52);
+    line-height: 110%;
+    margin-bottom: vw-1600(36);
+
+    @media (max-width: 768px) {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+  }
+
+  h3 {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: vw-1600(32);
+    line-height: 110%;
+    margin-bottom: vw-1600(24);
+    margin-top: vw-1600(36);
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+      margin-bottom: 12px;
+      margin-top: 20px;
+    }
+  }
+
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: vw-1600(32);
+    line-height: 140%;
+    margin-bottom: vw-1600(24);
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+  }
+
+  ul {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: vw-1600(20);
+    line-height: 130%;
+    margin-left: vw-1600(32);
+
+    strong {
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 17px;
+      margin-left: 28px;
+    }
+  }
+}
