@@ -9,13 +9,17 @@ import newsImage from "@/assets/images/news.png";
 import ArrowButton from "@/components/Buttons/ArrowButton/ArrowButton";
 import { useState } from "react";
 
-const NewsSlider = () => {
+import "swiper/css";
+
+const NewsSlider = ({ title }: { title?: string }) => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <h2 className={clsx(styles.title, "h2")}>Последние новости</h2>
+        <h2 className={clsx(styles.title, "h2")}>
+          {title || "Последние новости"}
+        </h2>
         <MainButton type="link" href="/news" className={styles.button}>
           Все новости
         </MainButton>

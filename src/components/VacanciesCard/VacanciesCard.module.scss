@@ -1,0 +1,146 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  border: 1px solid rgba(198, 198, 198, 0.3);
+  border-radius: vw-1600(8);
+  background: var(--white-text);
+  padding: vw-1600(24) vw-1600(36) vw-1600(36) vw-1600(24);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .more {
+      @media (max-width: 768px) {
+        width: fit-content;
+      }
+    }
+
+    .button {
+      width: vw-1600(198);
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    gap: vw-1600(36);
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .image {
+      border-radius: vw-1600(6);
+      width: vw-1600(270);
+      height: vw-1600(257);
+
+      @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+      }
+    }
+
+    .title {
+      margin-bottom: vw-1600(16);
+
+      @media (max-width: 768px) {
+        margin-bottom: 12px;
+      }
+    }
+
+    .info {
+      display: flex;
+      gap: vw-1600(22);
+      margin-bottom: vw-1600(20);
+
+      @media (max-width: 768px) {
+        gap: 22px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+
+      .infoItem {
+        color: var(--dark-text);
+        position: relative;
+
+        &:not(:last-child) {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translate(100%, -50%);
+            right: vw-1600(-8);
+            width: vw-1600(6);
+            height: vw-1600(6);
+            border-radius: 50%;
+            background: var(--green-1);
+
+            @media (max-width: 768px) {
+              width: 6px;
+              height: 6px;
+              right: -8px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .additional {
+    overflow: hidden;
+
+    .subtitle {
+      margin-bottom: vw-1600(12);
+
+      @media (max-width: 768px) {
+        margin-bottom: 12px;
+      }
+    }
+
+    .responsibilities {
+      margin-bottom: vw-1600(32);
+
+      ul {
+        margin-left: vw-1600(28);
+      }
+
+      @media (max-width: 768px) {
+        margin-bottom: 16px;
+
+        ul {
+          margin-left: 24px;
+        }
+      }
+    }
+
+    .price {
+      margin-bottom: vw-1600(32);
+
+      @media (max-width: 768px) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}

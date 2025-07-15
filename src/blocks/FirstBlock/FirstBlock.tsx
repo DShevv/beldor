@@ -8,10 +8,12 @@ const FirstBlock = ({
   image,
   title,
   breadcrumbsItems,
+  children,
 }: {
   image: string | StaticImageData;
   title: string;
   breadcrumbsItems: { title: string; href: string }[];
+  children?: React.ReactNode;
 }) => {
   return (
     <section className={styles.hero}>
@@ -23,6 +25,7 @@ const FirstBlock = ({
       <div className="wrapper">
         <Breadcrumbs items={breadcrumbsItems} className={styles.breadcrumbs} />
         <h1 className={clsx(styles.title, "h1")}>{title}</h1>
+        {children}
       </div>
     </section>
   );

@@ -32,6 +32,7 @@ const Pagination = ({
         <ArrowButton
           disabled={current === 1}
           type="link"
+          variant="secondary"
           href={createPageUrl(current - 1)}
           className={styles.prev}
           aria-label="Назад"
@@ -65,6 +66,7 @@ const Pagination = ({
         <ArrowButton
           disabled={current === max}
           type="link"
+          variant="secondary"
           href={createPageUrl(current + 1)}
           className={styles.next}
           aria-label="Вперёд"

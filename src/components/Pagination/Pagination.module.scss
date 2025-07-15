@@ -5,24 +5,45 @@
   gap: vw-1600(8);
   align-items: center;
   justify-content: center;
-
-  .next {
-    transform: rotate(180deg);
-  }
+  position: relative;
 
   .next,
   .prev {
     background-color: transparent;
     border: none;
+    flex-shrink: 0;
+    position: absolute;
+    left: vw-1600(-64);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 768px) {
+      left: -60px;
+    }
 
     svg {
       width: vw-1600(15);
       height: vw-1600(15);
+
+      @media (max-width: 768px) {
+        width: 15px;
+        height: 15px;
+      }
     }
 
     &:hover {
       background-color: transparent;
       color: var(--green-1);
+    }
+  }
+
+  .next {
+    transform: rotate(180deg) translateY(50%);
+    right: vw-1600(-64);
+    left: auto;
+
+    @media (max-width: 768px) {
+      right: -60px;
     }
   }
 
@@ -42,6 +63,12 @@
       border-radius: vw-1600(6);
       border: 1px solid rgba(198, 198, 198, 0.3);
 
+      @media (max-width: 768px) {
+        width: 37px;
+        height: 37px;
+        border-radius: 6px;
+      }
+
       &.active {
         background-color: var(--green-1);
         color: var(--white-text);
@@ -51,10 +78,10 @@
   }
 
   @media (max-width: 768px) {
-    gap: 24px;
+    gap: 12px;
 
     .list {
-      gap: 16px;
+      gap: 12px;
     }
   }
 }

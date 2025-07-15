@@ -1,0 +1,38 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(32);
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+  }
+
+  .title {
+    margin-bottom: vw-1600(24);
+
+    @media (max-width: 768px) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .video {
+    width: 100%;
+    height: vw-1600(724);
+    border-radius: vw-1600(8);
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      height: 200px;
+      border-radius: 6px;
+    }
+
+    iframe {
+      border-radius: vw-1600(8);
+
+      @media (max-width: 768px) {
+        border-radius: 6px;
+      }
+    }
+  }
+}
