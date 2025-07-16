@@ -1,3 +1,9 @@
+import ErrorBlock from "@/blocks/ErrorBlock/ErrorBlock";
+
 export default async function NotFound() {
-  return <>404</>;
+  return (
+    <main>
+      <ErrorBlock />
+    </main>
+  );
 }

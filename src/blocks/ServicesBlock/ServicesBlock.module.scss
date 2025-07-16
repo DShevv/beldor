@@ -1,0 +1,15 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(64);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: vw-1600(22);
+
+  @media (max-width: 768px) {
+    margin-top: 48px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 22px;
+  }
+}
