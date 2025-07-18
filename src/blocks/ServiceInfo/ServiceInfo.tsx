@@ -5,20 +5,24 @@ import Image, { StaticImageData } from "next/image";
 
 const ServiceInfo = ({
   title,
-  description,
   image,
+  className,
+  children,
 }: {
   title: string;
-  description: string;
   image: string | StaticImageData;
+  className?: string;
+  children: React.ReactNode;
 }) => {
   return (
-    <section className={styles.container}>
+    <section className={clsx(styles.container, className)}>
       <div className={styles.caption}>
         <h2 className={clsx(styles.title, "h2")}>{title}</h2>
-        <div className={clsx(styles.description, "body-3")}>{description}</div>
+        <div className={clsx(styles.description, "body-3")}>{children}</div>
       </div>
-      <Image src={image} alt={title} className={styles.image} />
+      <div className={styles.image}>
+        <Image src={image} alt={title} fill />
+      </div>
     </section>
   );
 };

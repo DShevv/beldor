@@ -1,0 +1,9 @@
+@use "../../assets/sass/functions" as *;
+
+.about {
+  flex-direction: row-reverse;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}

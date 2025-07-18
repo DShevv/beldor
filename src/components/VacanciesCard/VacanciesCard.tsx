@@ -5,7 +5,8 @@ import clsx from "clsx";
 import { motion as m, AnimatePresence } from "motion/react";
 import InlineButton from "../Buttons/InlineButton/InlineButton";
 import MainButton from "../Buttons/MainButton/MainButton";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import useOutsideClick from "@/utils/useOutsideClick";
 
 interface VacanciesCardProps {
   image: string | StaticImageData;
@@ -29,6 +30,31 @@ const VacanciesCard = ({
   salary,
 }: VacanciesCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useOutsideClick(ref, () => setIsOpen(false));
+
+  const handleClose = () => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      const isFullyVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+      if (!isFullyVisible) {
+        ref.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        setTimeout(() => {
+          setIsOpen(false);
+        }, 300);
+      } else {
+        setIsOpen(false);
+      }
+    } else {
+      setIsOpen(false);
+    }
+  };
 
   return (
     <m.div
@@ -40,6 +66,7 @@ const VacanciesCard = ({
         stiffness: 300,
         damping: 30,
       }}
+      ref={ref}
     >
       <m.div layout className={styles.main}>
         <Image src={image} alt={title} className={styles.image} />
@@ -51,13 +78,17 @@ const VacanciesCard = ({
             <div className={clsx(styles.infoItem, "body-4")}>{experience}</div>
           </div>
           <p className={clsx(styles.description, "body-3")}>{description}</p>
-          <AnimatePresence>
+          <AnimatePresence mode="wait">
             {!isOpen && (
               <m.div
+                key="buttons"
                 initial={{ opacity: 0, height: 0, marginTop: 0 }}
                 animate={{ opacity: 1, height: "auto", marginTop: 20 }}
                 exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                transition={{ duration: 0.3 }}
+                transition={{
+                  duration: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1.0],
+                }}
                 style={{ overflow: "hidden" }}
               >
                 <div className={styles.controls}>
@@ -77,14 +108,17 @@ const VacanciesCard = ({
         </m.div>
       </m.div>
 
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isOpen && (
           <m.div
-            layout
+            key="additional"
             initial={{ height: 0, opacity: 0, marginTop: 0 }}
             animate={{ height: "auto", opacity: 1, marginTop: 32 }}
             exit={{ height: 0, opacity: 0, marginTop: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{
+              duration: 0.5,
+              ease: [0.25, 0.1, 0.25, 1.0],
+            }}
             style={{ overflow: "hidden" }}
           >
             <div className={styles.additional}>
@@ -101,14 +135,15 @@ const VacanciesCard = ({
                 initial={{ opacity: 0, height: 0, marginTop: 0 }}
                 animate={{ opacity: 1, height: "auto", marginTop: 20 }}
                 exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.1,
+                  ease: [0.25, 0.1, 0.25, 1.0],
+                }}
                 style={{ overflow: "hidden" }}
               >
                 <div className={styles.controls}>
-                  <InlineButton
-                    className={styles.more}
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <InlineButton className={styles.more} onClick={handleClose}>
                     Скрыть
                   </InlineButton>
                   <MainButton className={styles.button}>

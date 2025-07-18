@@ -1,10 +1,18 @@
 import clsx from "clsx";
 import styles from "./VideoBlock.module.scss";
 
-const VideoBlock = () => {
+const VideoBlock = ({ title }: { title?: string }) => {
   return (
     <section className={styles.container}>
-      <h2 className={clsx(styles.title, "h3")}>Видео:</h2>
+      <h2
+        className={clsx(styles.title, {
+          ["h3"]: !title,
+          ["h2"]: title,
+          [styles.block]: title,
+        })}
+      >
+        {title || "Видео:"}
+      </h2>
 
       <div className={styles.video}>
         <iframe

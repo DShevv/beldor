@@ -4,8 +4,16 @@
   width: 100%;
   margin-top: vw-1600(32);
 
+  &:has(.block) {
+    margin-top: vw-1600(140);
+  }
+
   @media (max-width: 768px) {
     margin-top: 24px;
+
+    &:has(.block) {
+      margin-top: 72px;
+    }
   }
 
   .title {

@@ -4,10 +4,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   width: 100%;
   padding: vw-1600(24) 0;
+  background-color: var(--white-bg);
 
   @media (max-width: 768px) {
     padding: 12px 0;
     border-bottom: none;
+    background-color: transparent;
   }
 
   .wrapper {
@@ -39,11 +41,11 @@
         max-width: vw-1600(304);
 
         .infoItemTitle {
-          color: var(--white-text);
+          color: var(--dark-text);
         }
 
         .infoItemValue {
-          color: var(--white-text);
+          color: var(--dark-text);
           text-decoration: none;
         }
 
@@ -52,6 +54,14 @@
             text-decoration: underline;
           }
         }
+      }
+    }
+
+    .button {
+      background-color: var(--dark-text);
+
+      &:hover {
+        background-color: var(--green-1);
       }
     }
 

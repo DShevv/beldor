@@ -9,7 +9,11 @@
 
   .top {
     width: 100%;
-    background-color: var(--grey-1);
+    background-color: var(--white-bg);
+
+    @media (max-width: 768px) {
+      background: var(--grey-1);
+    }
 
     .wrapper {
       padding: vw-1600(8) 0;
@@ -29,7 +33,7 @@
       display: flex;
       align-items: center;
       gap: vw-1600(8);
-      color: var(--white-text);
+      color: var(--dark-text);
 
       svg {
         width: vw-1600(26);
@@ -38,6 +42,7 @@
 
       @media (max-width: 768px) {
         gap: 6px;
+        color: var(--white-text);
 
         svg {
           width: 20px;
@@ -65,8 +70,12 @@
         }
 
         .languageLink {
-          color: var(--white-text);
+          color: var(--dark-text);
           text-decoration: none;
+
+          @media (max-width: 768px) {
+            color: var(--white-text);
+          }
 
           &.active {
             font-weight: 500;
@@ -82,13 +91,14 @@
               left: vw-1600(-7);
               width: vw-1600(1);
               height: vw-1600(10);
-              background-color: var(--white-text);
+              background-color: var(--dark-text);
               transform: translateY(-50%);
 
               @media (max-width: 768px) {
                 left: -7px;
                 width: 1px;
                 height: 10px;
+                background-color: var(--white-text);
               }
             }
           }
@@ -100,7 +110,7 @@
         align-items: center;
         gap: vw-1600(6);
         text-decoration: none;
-        color: var(--white-text);
+        color: var(--dark-text);
 
         &:hover {
           text-decoration: underline;
@@ -113,6 +123,7 @@
 
         @media (max-width: 768px) {
           gap: 6px;
+          color: var(--white-text);
 
           svg {
             width: 20px;

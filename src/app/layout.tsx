@@ -4,6 +4,7 @@ import Script from "next/script";
 import Header from "@/blocks/Header/Header";
 import MobileMenu from "@/blocks/MobileMenu/MobileMenu";
 import Footer from "@/blocks/Footer/Footer";
+import FeedbackPopup from "@/blocks/FeedbackPopup/FeedbackPopup";
 
 const jost = Jost({
   variable: "--font-family",
@@ -27,6 +28,7 @@ export default async function RootLayout({
         <Footer />
 
         <MobileMenu />
+        <FeedbackPopup />
       </body>
     </html>
   );

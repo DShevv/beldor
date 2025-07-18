@@ -1,0 +1,29 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(140);
+
+  @media (max-width: 768px) {
+    margin-top: 72px;
+  }
+
+  .title {
+    margin-bottom: vw-1600(36);
+
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: vw-1600(36);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+}

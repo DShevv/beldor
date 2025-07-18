@@ -19,7 +19,7 @@
       left: vw-1600(16);
       top: 50%;
       transform: translateY(-50%);
-      color: var(--white-text);
+      color: var(--dark-text);
       z-index: 1;
       width: vw-1600(26);
       height: vw-1600(26);
@@ -44,8 +44,8 @@
       border: 1px solid var(--grey-2);
       border-radius: vw-1600(6);
       padding: vw-1600(14) vw-1600(16) vw-1600(14) vw-1600(48);
-      background: rgba(255, 255, 255, 0.2);
-      color: var(--white-text);
+      background: var(--white-bg);
+      color: var(--dark-text);
       outline: none;
       transition: border-color 0.3s ease;
 
@@ -58,7 +58,7 @@
 
       &::placeholder {
         opacity: 0.8;
-        color: var(--white-text);
+        color: var(--grey-1);
 
         @media (max-width: 768px) {
           color: var(--dark-text);

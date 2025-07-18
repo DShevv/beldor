@@ -1,0 +1,17 @@
+@use "../../assets/sass/functions" as *;
+
+.quality {
+  ul {
+    margin-left: vw-1600(28);
+    margin-top: vw-1600(12);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    ul {
+      margin-left: 24px;
+      margin-top: 12px;
+    }
+  }
+}

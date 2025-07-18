@@ -1,0 +1,82 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(140);
+  margin-bottom: vw-1600(-60);
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin-top: 72px;
+    margin-bottom: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: vw-1600(36);
+
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .navigation {
+      display: flex;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  .swiper {
+    width: calc(100% + 40px);
+    padding: 0 vw-1600(20) vw-1600(60);
+
+    @media (max-width: 768px) {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      padding: 0 20px 60px;
+      margin-bottom: -60px;
+    }
+
+    .slide {
+      @media (max-width: 768px) {
+        width: auto;
+      }
+
+      .image {
+        width: vw-1600(308);
+        height: vw-1600(400);
+        border-radius: vw-1600(6);
+
+        @media (max-width: 768px) {
+          width: 160px;
+          height: 220px;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    display: none;
+    gap: vw-1600(16);
+
+    .next {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      position: relative;
+      z-index: 5;
+      gap: 16px;
+      margin-top: 24px;
+    }
+  }
+}

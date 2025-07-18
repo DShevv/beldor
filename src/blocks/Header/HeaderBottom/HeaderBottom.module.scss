@@ -2,6 +2,7 @@
 
 .container {
   width: 100%;
+  background-color: var(--green-1);
 
   @media (max-width: 768px) {
     display: none;
@@ -51,8 +52,8 @@
             content: "";
             width: 100%;
             height: vw-1600(4);
-            background: var(--green-1);
-            bottom: vw-1600(-24);
+            background: var(--white-text);
+            bottom: vw-1600(-27);
             left: 0;
             border-radius: vw-1600(6) vw-1600(6) 0 0;
           }

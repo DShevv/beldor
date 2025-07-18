@@ -1,0 +1,141 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  border: 1px solid rgba(198, 198, 198, 0.3);
+  border-radius: vw-1600(6);
+  padding: vw-1600(24);
+  display: flex;
+  flex-direction: column;
+  gap: vw-1600(24);
+  background: var(--white-bg);
+  transition: all 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    gap: 24px;
+    border-radius: 6px;
+  }
+
+  &:hover {
+    box-shadow:
+      0 9px 19px 0 rgba(32, 33, 32, 0.05),
+      0 34px 34px 0 rgba(32, 33, 32, 0.02),
+      0 77px 46px 0 rgba(32, 33, 32, 0.01),
+      0 137px 55px 0 rgba(32, 33, 32, 0),
+      0 214px 60px 0 rgba(32, 33, 32, 0);
+    border: 1px solid var(--green-1);
+  }
+
+  .title {
+    flex: 1 1 100%;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: vw-1600(16);
+
+    @media (max-width: 768px) {
+      gap: 16px;
+    }
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    padding: vw-1600(265) 0;
+    overflow-y: auto;
+
+    @media (max-width: 768px) {
+      padding: 127px 20px;
+    }
+
+    &.open {
+      z-index: 500;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .popupModal {
+      position: relative;
+      border: 1px solid rgba(198, 198, 198, 0.3);
+      border-radius: vw-1600(6);
+      padding: vw-1600(24);
+      width: vw-1600(638);
+      background: var(--white-bg);
+      margin: 0 auto;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        padding: 20px;
+        border-radius: 6px;
+      }
+
+      .popupTitle {
+        margin-bottom: vw-1600(12);
+
+        @media (max-width: 768px) {
+          margin-bottom: 12px;
+        }
+      }
+
+      .popupContent {
+        margin-bottom: vw-1600(24);
+        margin-left: vw-1600(28);
+
+        @media (max-width: 768px) {
+          margin-bottom: 20px;
+          margin-left: 28px;
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: vw-1600(16);
+        right: vw-1600(16);
+        cursor: pointer;
+        width: vw-1600(36);
+        height: vw-1600(36);
+        background: var(--dark-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: var(--white-text);
+
+        svg {
+          width: vw-1600(20);
+          height: vw-1600(20);
+        }
+
+        @media (max-width: 768px) {
+          top: 12px;
+          right: 12px;
+          width: 36px;
+          height: 36px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      .button {
+        width: vw-1600(177);
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use "../../assets/sass/functions" as *;
+
+.wrapper {
+  .certificates {
+    flex-direction: row-reverse;
+
+    div:has(img) {
+      width: vw-1600(638);
+      height: vw-1600(305);
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      div:has(img) {
+        width: 100%;
+        height: 200px;
+      }
+    }
+  }
+}

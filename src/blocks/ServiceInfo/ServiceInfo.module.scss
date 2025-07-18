@@ -35,7 +35,15 @@
   .image {
     border-radius: vw-1600(8);
     width: vw-1600(638);
-    height: vw-1600(473);
+    height: auto;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(198, 198, 198, 0.3);
+
+    img {
+      object-fit: cover;
+    }
 
     @media (max-width: 768px) {
       width: 100%;

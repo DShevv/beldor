@@ -25,7 +25,7 @@ const HeaderInfo = observer(() => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <Logo />
+        <Logo text="Спецтехника для строительства, восстановления и обслуживания автомобильных магистралей" />
 
         <div className={styles.info}>
           <div className={styles.infoItem}>
@@ -44,7 +44,12 @@ const HeaderInfo = observer(() => {
               +375 (17) 763–64–53
             </Link>
           </div>
-          <MainButton className={styles.button}>Обратный звонок</MainButton>
+          <MainButton
+            className={styles.button}
+            onClick={() => openPopup("feedback")}
+          >
+            Обратный звонок
+          </MainButton>
         </div>
 
         <div className={styles.buttons}>
