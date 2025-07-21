@@ -1,0 +1,95 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  width: 100%;
+  margin-top: vw-1600(64);
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin-top: 48px;
+  }
+
+  .swiper {
+    width: calc(100% + vw-1600(48));
+    margin-left: vw-1600(-24);
+    padding: 0 vw-1600(24);
+    padding-bottom: vw-1600(48);
+
+    @media (max-width: 768px) {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      padding: 0 20px;
+      padding-bottom: 32px;
+    }
+
+    .slide {
+      @media (max-width: 768px) {
+        width: auto;
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: vw-1600(10);
+        border: 1px solid rgba(198, 198, 198, 0.3);
+        border-radius: vw-1600(6);
+        padding: vw-1600(12) vw-1600(12) vw-1600(16) vw-1600(12);
+        text-decoration: none;
+        color: var(--dark-text);
+        transition: all 0.3s ease;
+
+        @media (max-width: 768px) {
+          border-radius: 6px;
+          padding: 12px;
+          width: 198px;
+          height: 182px;
+          gap: 10px;
+        }
+
+        &:hover {
+          box-shadow:
+            0 9px 19px 0 rgba(32, 33, 32, 0.05),
+            0 34px 34px 0 rgba(32, 33, 32, 0.02),
+            0 77px 46px 0 rgba(32, 33, 32, 0.01),
+            0 137px 55px 0 rgba(32, 33, 32, 0),
+            0 214px 60px 0 rgba(32, 33, 32, 0);
+          background: var(--white-text);
+          border-color: var(--green-1);
+        }
+      }
+
+      img {
+        width: 100%;
+        border-radius: vw-1600(5);
+        height: vw-1600(130);
+        object-fit: contain;
+        object-position: center;
+
+        @media (max-width: 768px) {
+          border-radius: 5px;
+          height: 130px;
+        }
+      }
+    }
+  }
+
+  .navigation {
+    position: absolute;
+    width: calc(100% + vw-1600(184));
+    bottom: calc(50%);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+
+    .next {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

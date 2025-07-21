@@ -13,12 +13,18 @@ const CatalogBlock = ({ isTitle = true }: { isTitle?: boolean }) => {
       )}
 
       <div className={styles.categories}>
-        <Link href="/" className={clsx(styles.category, "h3")}>
+        <Link
+          href="/catalog/road-maintenance-equipment"
+          className={clsx(styles.category, "h3")}
+        >
           <Image src={category1} alt="category1" />
           Оборудование для обслуживания дорог
         </Link>
 
-        <Link href="/" className={clsx(styles.category, "h3")}>
+        <Link
+          href="/catalog/plane-maintenance-equipment"
+          className={clsx(styles.category, "h3")}
+        >
           <Image src={category2} alt="category2" />
           Оборудование для обслуживания самолётов
         </Link>

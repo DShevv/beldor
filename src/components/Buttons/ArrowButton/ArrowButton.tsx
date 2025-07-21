@@ -11,6 +11,7 @@ type ArrowButtonProps =
       type?: "button" | "submit";
       href?: never;
       variant?: "secondary";
+      name?: string;
       otherProps?: React.HTMLAttributes<HTMLButtonElement>;
     }
   | {
@@ -20,6 +21,7 @@ type ArrowButtonProps =
       type?: "link";
       href: string;
       variant?: "secondary";
+      name?: never;
       otherProps?: React.HTMLAttributes<HTMLAnchorElement>;
     };
 
@@ -55,6 +57,7 @@ const ArrowButton = (props: ArrowButtonProps) => {
       onClick={props.onClick as React.MouseEventHandler<HTMLButtonElement>}
       type={props.type !== "link" ? props.type || "button" : "button"}
       disabled={props.disabled}
+      name={props.name}
       {...buttonProps}
     >
       <SvgArrow />

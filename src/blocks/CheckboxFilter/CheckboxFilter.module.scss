@@ -1,0 +1,58 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  padding: vw-1600(16) vw-1600(20);
+  border-radius: vw-1600(6);
+  background: rgba(198, 198, 198, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 16px 20px;
+    border-radius: 6px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: vw-1600(8);
+
+      @media (max-width: 768px) {
+        gap: 8px;
+      }
+    }
+    .arrow {
+      transition: transform 0.3s;
+      display: flex;
+      align-items: center;
+      transform: rotate(-90deg);
+      width: vw-1600(12);
+      height: vw-1600(12);
+
+      @media (max-width: 768px) {
+        width: 12px;
+        height: 12px;
+      }
+
+      &.open {
+        transform: rotate(90deg);
+        color: var(--grey-2);
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: vw-1600(10);
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
+  }
+}

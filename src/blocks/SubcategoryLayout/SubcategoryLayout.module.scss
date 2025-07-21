@@ -1,0 +1,21 @@
+@use "../../assets/sass/functions" as *;
+
+.wrapper {
+  display: flex;
+  gap: vw-1600(42);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .filters {
+    flex: 0 0 vw-1600(288);
+    display: flex;
+    flex-direction: column;
+    gap: vw-1600(20);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

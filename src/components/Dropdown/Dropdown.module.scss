@@ -6,6 +6,11 @@
   width: 100%;
   max-width: vw-1600(198);
 
+  @media (max-width: 768px) {
+    max-width: 198px;
+    width: 100%;
+  }
+
   .dropdownToggle {
     display: flex;
     align-items: center;
@@ -22,7 +27,9 @@
     transition: all 0.2s ease;
 
     @media (max-width: 768px) {
-      padding: 14px 16px;
+      padding: 8px 12px 8px 16px;
+      border-radius: 6px;
+      gap: 6px;
     }
 
     &:hover {
@@ -51,6 +58,11 @@
       color: var(--green-1);
       width: vw-1600(12);
       height: vw-1600(12);
+
+      @media (max-width: 768px) {
+        width: 12px;
+        height: 12px;
+      }
     }
   }
 
@@ -78,6 +90,12 @@
     overflow-y: auto;
     list-style: none;
     margin: 0;
+
+    @media (max-width: 768px) {
+      padding: 12px;
+      border-radius: 6px;
+      gap: 11px;
+    }
 
     .dropdownItem {
       cursor: pointer;

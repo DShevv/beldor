@@ -2,10 +2,18 @@
 
 .container {
   width: 100%;
-  margin-top: vw-1600(140);
+  margin-top: vw-1600(64);
+
+  &:has(.title) {
+    margin-top: vw-1600(140);
+  }
 
   @media (max-width: 768px) {
-    margin-top: 72px;
+    margin-top: 48px;
+
+    &:has(.title) {
+      margin-top: 72px;
+    }
   }
 
   .title {

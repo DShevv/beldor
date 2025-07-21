@@ -1,0 +1,101 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  display: flex;
+  gap: vw-1600(16);
+  width: vw-1600(566);
+  height: vw-1600(456);
+  position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+}
+
+.thumbs {
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .thumb {
+    border: 1px solid transparent;
+    border-radius: vw-1600(4);
+    width: vw-1600(94);
+    height: vw-1600(94);
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+    }
+
+    &.active {
+      border-color: var(--green-1);
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.zoom {
+  width: vw-1600(456);
+  height: vw-1600(456);
+  border: 1px solid var(--medium-blue);
+  border-radius: vw-1600(8);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .zoomItem {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  right: vw-1600(16);
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: vw-1600(16);
+  z-index: 2;
+  width: vw-1600(426);
+  pointer-events: none;
+
+  .next {
+    transform: rotate(180deg);
+  }
+
+  .next,
+  .prev {
+    pointer-events: auto;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

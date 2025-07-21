@@ -11,17 +11,17 @@ export const navigation = [
   {
     id: 2,
     title: "Продукция",
-    href: "/products",
+    href: "/catalog",
     children: [
       {
         id: 11,
         title: "Оборудование для обслуживания дорог",
-        href: "/products/road-maintenance-equipment",
+        href: "/catalog/road-maintenance-equipment",
       },
       {
         id: 12,
         title: "Оборудование для обслуживания самолётов",
-        href: "/products/plane-maintenance-equipment",
+        href: "/catalog/plane-maintenance-equipment",
       },
 
     ],
@@ -92,14 +92,14 @@ export const searchData = [
     title: "Оборудование для обслуживания дорог",
     description: "Профессиональное оборудование для ремонта и обслуживания дорожного покрытия. Высокое качество и надежность.",
     image: searchImage1,
-    href: "/products/road-maintenance-equipment",
+    href: "/catalog/road-maintenance-equipment",
   },
   {
     id: 2,
     title: "Оборудование для обслуживания самолётов",
     description: "Специализированное оборудование для технического обслуживания авиационной техники. Соответствует всем стандартам безопасности.",
     image: searchImage1,
-    href: "/products/plane-maintenance-equipment",
+    href: "/catalog/plane-maintenance-equipment",
   },
   {
     id: 3,

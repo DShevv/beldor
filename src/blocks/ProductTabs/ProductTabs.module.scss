@@ -1,0 +1,33 @@
+@use "../../assets/sass/functions" as *;
+
+.container {
+  margin-top: vw-1600(48);
+
+  @media (max-width: 768px) {
+    margin-top: 36px;
+  }
+
+  .tabs {
+    display: flex;
+    gap: vw-1600(16);
+    margin-bottom: vw-1600(24);
+
+    @media (max-width: 768px) {
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      &.active {
+        background-color: var(--dark-text);
+        color: var(--white-text);
+        cursor: default;
+      }
+
+      @media (max-width: 768px) {
+        width: fit-content;
+      }
+    }
+  }
+}

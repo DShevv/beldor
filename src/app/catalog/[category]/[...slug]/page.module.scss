@@ -1,0 +1,15 @@
+@use "../../../../assets/sass/functions" as *;
+
+.product {
+  margin-top: vw-1600(64);
+  height: fit-content;
+  display: flex;
+  gap: vw-1600(22);
+
+  @media (max-width: 768px) {
+    margin-top: 48px;
+    flex-direction: column;
+
+    gap: 24px;
+  }
+}
