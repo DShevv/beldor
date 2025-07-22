@@ -1,3 +1,4 @@
+import { ProductT } from "./types";
 
 export type GlobalStoreT = {
   popupStore: PopupStoreT;
@@ -7,10 +8,10 @@ export type GlobalStoreT = {
 export type PopupStoreT = {
   feedback: boolean;
   menu: boolean;
+  order: boolean;
+  product: ProductT | null;
 
-  openPopup: (
-    type: string,
-  ) => void;
+  openPopup: (type: string, product?: ProductT) => void;
   closePopup: (type: string) => void;
 };
 

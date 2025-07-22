@@ -1,21 +1,28 @@
 import { makeAutoObservable } from "mobx";
 import { PopupStoreT } from "@/types/stores";
+import { ProductT } from "@/types/types";
 
 class PopupStore implements PopupStoreT {
   feedback = false;
   menu = false;
+  order = false;
+  product: ProductT | null = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  openPopup = (type: string) => {
+  openPopup = (type: string, product?: ProductT) => {
     switch (type) {
       case "feedback":
         this.feedback = true;
         break;
       case "menu":
         this.menu = true;
+        break;
+      case "order":
+        this.order = true;
+        this.product = product ?? null;
         break;
     }
   };
@@ -27,6 +34,10 @@ class PopupStore implements PopupStoreT {
         break;
       case "menu":
         this.menu = false;
+        break;
+      case "order":
+        this.order = false;
+        this.product = null;
         break;
     }
   };

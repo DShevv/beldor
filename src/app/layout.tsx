@@ -5,6 +5,8 @@ import Header from "@/blocks/Header/Header";
 import MobileMenu from "@/blocks/MobileMenu/MobileMenu";
 import Footer from "@/blocks/Footer/Footer";
 import FeedbackPopup from "@/blocks/FeedbackPopup/FeedbackPopup";
+import OrderPopup from "@/blocks/OrderPopup/OrderPopup";
+import Notification from "@/components/Notification/Notification";
 
 const jost = Jost({
   variable: "--font-family",
@@ -29,6 +31,8 @@ export default async function RootLayout({
 
         <MobileMenu />
         <FeedbackPopup />
+        <OrderPopup />
+        <Notification />
       </body>
     </html>
   );

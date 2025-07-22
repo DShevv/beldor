@@ -1,0 +1,84 @@
+@use "../../assets/sass/functions" as *;
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: vw-1600(200);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.wrapper.active {
+  opacity: 1;
+  z-index: 2000;
+  pointer-events: auto;
+}
+
+.item {
+  position: relative;
+  padding: vw-1600(16) vw-1600(24);
+  background: var(--green-2);
+  max-width: vw-1600(362);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: vw-1600(6);
+  color: var(--white-bg);
+
+  svg {
+    width: vw-1600(32);
+    height: vw-1600(32);
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: vw-1600(8);
+  margin-bottom: vw-1600(8);
+  color: var(--white-bg);
+}
+
+.text {
+  color: var(--white-bg);
+  text-align: center;
+}
+
+.item.error {
+  background: var(--red);
+  max-width: vw-1600(372);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-top: 100px;
+  }
+
+  .item {
+    padding: 16px 24px;
+    max-width: 305px;
+    border-radius: 6px;
+
+    &.error {
+      max-width: 314px;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .title {
+    margin-bottom: 8px;
+  }
+}
