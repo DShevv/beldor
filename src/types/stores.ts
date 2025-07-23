@@ -9,9 +9,9 @@ export type PopupStoreT = {
   feedback: boolean;
   menu: boolean;
   order: boolean;
-  product: ProductT | null;
+  product: ProductT | string | null;
 
-  openPopup: (type: string, product?: ProductT) => void;
+  openPopup: (type: string, product?: ProductT | string) => void;
   closePopup: (type: string) => void;
 };
 

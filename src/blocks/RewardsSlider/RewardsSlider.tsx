@@ -12,6 +12,7 @@ import Image from "next/image";
 
 const RewardsSlider = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [activeSlide, setActiveSlide] = useState<number>(0);
 
   return (
     <section className={styles.container}>
@@ -48,26 +49,55 @@ const RewardsSlider = () => {
           }}
           className={styles.swiper}
           onSwiper={setSwiper}
+          onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
         >
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 0,
+            })}
+          >
             <Image src={diplom} alt="награда 1" className={styles.image} />
           </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 1,
+            })}
+          >
             <Image src={diplom} alt="награда 2" className={styles.image} />
           </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 2,
+            })}
+          >
             <Image src={diplom} alt="награда 3" className={styles.image} />
           </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 3,
+            })}
+          >
             <Image src={diplom} alt="награда 4" className={styles.image} />
           </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 4,
+            })}
+          >
             <Image src={diplom} alt="награда 5" className={styles.image} />
           </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 5,
+            })}
+          >
             <Image src={diplom} alt="награда 6" className={styles.image} />
           </SwiperSlide>
-          <SwiperSlide className={styles.slide}>
+          <SwiperSlide
+            className={clsx(styles.slide, {
+              [styles.active]: activeSlide === 6,
+            })}
+          >
             <Image src={diplom} alt="награда 7" className={styles.image} />
           </SwiperSlide>
         </Swiper>

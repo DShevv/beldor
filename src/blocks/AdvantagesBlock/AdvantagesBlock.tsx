@@ -1,6 +1,11 @@
 import clsx from "clsx";
 import styles from "./AdvantagesBlock.module.scss";
-import { SvgCertificate, SvgStatistics, SvgTime } from "@/assets/icons/svgs";
+import {
+  SvgCertificate,
+  SvgPeople,
+  SvgStatistics,
+  SvgTime,
+} from "@/assets/icons/svgs";
 
 const AdvantagesBlock = () => {
   return (
@@ -52,7 +57,7 @@ const AdvantagesBlock = () => {
           </div>
         </div>
         <div className={styles.advantage}>
-          <SvgCertificate />
+          <SvgPeople />
           <div className={styles.info}>
             <p className={clsx(styles.infoTitle, "h5")}>
               Ориентация на клиентскую базу

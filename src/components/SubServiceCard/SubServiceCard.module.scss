@@ -51,10 +51,14 @@
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
-    padding: vw-1600(265) 0;
+
     overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: 768px) {
+      display: block;
       padding: 127px 20px;
     }
 

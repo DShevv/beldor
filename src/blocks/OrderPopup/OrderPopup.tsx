@@ -48,9 +48,12 @@ const OrderPopup = observer(() => {
         </div>
 
         <div className={styles.caption}>
-          <h2 className={clsx("h2", styles.title)}>Заказать товар</h2>
+          <h2 className={clsx("h2", styles.title)}>
+            Заказать{" "}
+            {product && typeof product === "object" ? "товар" : "услугу"}
+          </h2>
           <div className={styles.product}>
-            {product && (
+            {product && typeof product === "object" && (
               <Image
                 src={product.image}
                 alt={product.name}
@@ -59,7 +62,9 @@ const OrderPopup = observer(() => {
                 height={338}
               />
             )}
-            <div className={clsx("body-2", styles.name)}>{product?.name}</div>
+            <div className={clsx("body-2", styles.name)}>
+              {product && typeof product === "object" ? product.name : product}
+            </div>
           </div>
         </div>
         <Formik

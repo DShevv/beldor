@@ -55,6 +55,10 @@
     }
   }
 
+  .wrapper {
+    position: relative;
+  }
+
   .swiper {
     max-width: calc(vw-1600(1298) + vw-1600(24));
     margin: 0 auto;

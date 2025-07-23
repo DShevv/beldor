@@ -4,13 +4,17 @@ import clsx from "clsx";
 import MainButton from "../Buttons/MainButton/MainButton";
 import { useEffect, useState } from "react";
 import { SvgCross } from "@/assets/icons/svgs";
+import { observer } from "mobx-react-lite";
+import globalStore from "@/stores/global-store";
 
 interface SubServiceCardProps {
   title: string;
   children: React.ReactNode;
 }
 
-const SubServiceCard = ({ title, children }: SubServiceCardProps) => {
+const SubServiceCard = observer(({ title, children }: SubServiceCardProps) => {
+  const { popupStore } = globalStore;
+  const { openPopup } = popupStore;
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -37,7 +41,12 @@ const SubServiceCard = ({ title, children }: SubServiceCardProps) => {
       <div className={clsx(styles.title, "h4")}>{title}</div>
 
       <div className={styles.controls}>
-        <MainButton className={styles.button}>заказать</MainButton>
+        <MainButton
+          className={styles.button}
+          onClick={() => openPopup("order", title)}
+        >
+          заказать
+        </MainButton>
         <MainButton
           className={styles.button}
           variant="transparent"
@@ -62,6 +71,6 @@ const SubServiceCard = ({ title, children }: SubServiceCardProps) => {
       </div>
     </div>
   );
-};
+});
 
 export default SubServiceCard;

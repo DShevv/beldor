@@ -22,8 +22,8 @@
   }
 
   svg {
-    width: vw-1600(22);
-    height: vw-1600(22);
+    width: vw-1600(16);
+    height: vw-1600(18);
   }
 
   @media (max-width: 768px) {
@@ -31,7 +31,7 @@
     height: 52px;
 
     svg {
-      width: 18px;
+      width: 16px;
       height: 18px;
     }
   }

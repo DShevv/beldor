@@ -73,7 +73,7 @@ const NewsPage = () => {
 
         <GalleryBlock />
         <VideoBlock />
-        <InlineButton backIcon className={styles.back}>
+        <InlineButton backIcon className={styles.back} type="link" href="/news">
           Назад к новостям
         </InlineButton>
 

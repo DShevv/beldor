@@ -42,7 +42,6 @@ const HistoryBlock = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Автоматическая смена слайдов
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setActiveTab((prev) => (prev + 1 > slides.length - 1 ? 0 : prev + 1));
@@ -52,7 +51,6 @@ const HistoryBlock = () => {
     };
   }, []);
 
-  // Сброс таймера при ручном переключении
   const handlePrev = () => {
     setActiveTab((prev) => {
       const next = prev - 1 < 0 ? slides.length - 1 : prev - 1;

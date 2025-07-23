@@ -22,7 +22,9 @@ const AboutCompanyBlock = () => {
           className={clsx(styles.description, "body-3")}
           dangerouslySetInnerHTML={{ __html: description }}
         />
-        <MainButton className={styles.button}>Подробнее</MainButton>
+        <MainButton className={styles.button} type="link" href="/about">
+          Подробнее
+        </MainButton>
       </div>
       <Image src={aboutCompany} alt="about-company" />
     </section>

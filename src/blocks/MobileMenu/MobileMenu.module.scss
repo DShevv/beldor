@@ -72,12 +72,11 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 
   .link {
     display: flex;
     align-items: center;
-    padding: 0 24px;
+    padding: 10px 24px;
     gap: 12px;
 
     color: var(--text);
@@ -106,15 +105,16 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0px;
     overflow: hidden;
 
     li {
       width: 100%;
-      padding: 0px 24px;
+      padding: 6px 24px;
     }
 
     .subLink {
+      display: block;
       width: 100%;
       color: var(--dark-text);
       text-decoration: none;

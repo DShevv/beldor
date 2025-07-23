@@ -71,7 +71,7 @@ const MobileMenu = observer(() => {
           </li>
           <li>
             <Link
-              href="/about"
+              href="/catalog"
               className={clsx(styles.link, "h5")}
               onClick={() => closePopup("menu")}
             >
@@ -80,7 +80,7 @@ const MobileMenu = observer(() => {
           </li>
           <li>
             <Link
-              href="/about"
+              href="/services"
               className={clsx(styles.link, "h5")}
               onClick={() => closePopup("menu")}
             >
@@ -92,8 +92,8 @@ const MobileMenu = observer(() => {
               className={clsx(styles.link, "h5")}
               onClick={() => setIsOpen(!isOpen)}
             >
-              <Link href="/services" onClick={() => closePopup("menu")}>
-                О КОМПАНИИ
+              <Link href="/about" onClick={() => closePopup("menu")}>
+                О КОМПАНИИ
               </Link>{" "}
               <SvgArrow
                 style={{
@@ -105,9 +105,9 @@ const MobileMenu = observer(() => {
               {isOpen && (
                 <m.ul
                   layout
-                  initial={{ height: 0, paddingTop: 0 }}
-                  animate={{ height: "auto", paddingTop: 16 }}
-                  exit={{ height: 0, paddingTop: 0 }}
+                  initial={{ height: 0 }}
+                  animate={{ height: "auto" }}
+                  exit={{ height: 0 }}
                   transition={{ duration: 0.3 }}
                   className={styles.subMenu}
                 >
@@ -171,7 +171,7 @@ const MobileMenu = observer(() => {
                 <SvgMarker />
               </div>
               <div className={styles.infoText}>
-                Республика Беларусь, Минская обл., г. Смолевичи, ул. Торговая
+                Республика Беларусь, Минская обл., г. Смолевичи, ул. Торговая
                 14,Б 222201
               </div>
             </div>

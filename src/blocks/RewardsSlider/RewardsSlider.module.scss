@@ -74,11 +74,19 @@
 
     .slide {
       width: auto;
+
+      &.active {
+        .image {
+          border: 1px solid var(--green-1);
+        }
+      }
+
       .image {
         width: vw-1600(308);
         height: vw-1600(400);
         border-radius: vw-1600(6);
-        border: 1px solid var(--green-1);
+        border: 1px solid transparent;
+        transition: all 0.3s ease-in-out;
 
         @media (max-width: 768px) {
           width: 160px;

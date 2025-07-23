@@ -55,50 +55,52 @@ const Hero = () => {
         <Image src={heroBg} alt="hero" fill className={styles.bgImage} />
       </div>
 
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={24}
-        className={styles.swiper}
-        onSwiper={setSwiper}
-        onSlideChange={() => {
-          setActiveSlide(swiper?.realIndex ?? 0);
-        }}
-        loop={true}
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: true,
-        }}
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={slide.id} className={styles.slide}>
-            {index === 0 ? (
-              <h1
-                className={clsx(styles.title, "h1")}
-                dangerouslySetInnerHTML={{ __html: slide.title }}
-              />
-            ) : (
-              <h2
-                className={clsx(styles.title, "h1")}
-                dangerouslySetInnerHTML={{ __html: slide.title }}
-              />
-            )}
-            <p className={clsx(styles.description, "body-1")}>
-              {slide.description}
-            </p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className={styles.wrapper}>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={24}
+          className={styles.swiper}
+          onSwiper={setSwiper}
+          onSlideChange={() => {
+            setActiveSlide(swiper?.realIndex ?? 0);
+          }}
+          loop={true}
+          modules={[Autoplay]}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide key={slide.id} className={styles.slide}>
+              {index === 0 ? (
+                <h1
+                  className={clsx(styles.title, "h1")}
+                  dangerouslySetInnerHTML={{ __html: slide.title }}
+                />
+              ) : (
+                <h2
+                  className={clsx(styles.title, "h1")}
+                  dangerouslySetInnerHTML={{ __html: slide.title }}
+                />
+              )}
+              <p className={clsx(styles.description, "body-1")}>
+                {slide.description}
+              </p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <div className={styles.navigation}>
-        <ArrowButton
-          className={styles.prev}
-          onClick={() => swiper?.slidePrev()}
-        />
-        <ArrowButton
-          className={styles.next}
-          onClick={() => swiper?.slideNext()}
-        />
+        <div className={styles.navigation}>
+          <ArrowButton
+            className={styles.prev}
+            onClick={() => swiper?.slidePrev()}
+          />
+          <ArrowButton
+            className={styles.next}
+            onClick={() => swiper?.slideNext()}
+          />
+        </div>
       </div>
 
       <div className={styles.pagination}>

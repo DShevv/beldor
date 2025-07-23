@@ -6,13 +6,13 @@ class PopupStore implements PopupStoreT {
   feedback = false;
   menu = false;
   order = false;
-  product: ProductT | null = null;
+  product: ProductT | string | null = null;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  openPopup = (type: string, product?: ProductT) => {
+  openPopup = (type: string, product?: ProductT | string) => {
     switch (type) {
       case "feedback":
         this.feedback = true;

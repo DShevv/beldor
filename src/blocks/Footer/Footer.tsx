@@ -3,13 +3,14 @@ import styles from "./Footer.module.scss";
 import Link from "next/link";
 import Logo from "@/components/Logo/Logo";
 import { SvgMail, SvgMarker, SvgPhone } from "@/assets/icons/svgs";
+import logo from "@/assets/images/logo-white.png";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className="wrapper">
-          <Logo className={styles.logo} />
+          <Logo className={styles.logo} image={logo} />
           <div className={clsx(styles.text, "body-2")}>
             Филиал ОАО «Минский завод гражданской авиации № 407», занимаемся
             производством дорожной техники для строительства, ремонта

@@ -7,6 +7,20 @@
   gap: vw-1600(7);
   text-decoration: none;
 
+  .logoImage {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .logoWhite {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
   .text {
     color: var(--dark-text);
     max-width: vw-1600(260);

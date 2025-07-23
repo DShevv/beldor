@@ -49,7 +49,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
+      width: vw-1600(198);
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
   }
 
